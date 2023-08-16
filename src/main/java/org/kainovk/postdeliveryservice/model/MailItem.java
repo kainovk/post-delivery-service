@@ -28,7 +28,7 @@ public class MailItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "type", nullable = false)
     @Enumerated(EnumType.STRING)

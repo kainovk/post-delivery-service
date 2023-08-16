@@ -3,10 +3,13 @@ package org.kainovk.postdeliveryservice.controller;
 import lombok.RequiredArgsConstructor;
 import org.kainovk.postdeliveryservice.dto.MailItemDto;
 import org.kainovk.postdeliveryservice.dto.MailItemRequest;
+import org.kainovk.postdeliveryservice.model.Status;
 import org.kainovk.postdeliveryservice.service.MailItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,5 +34,15 @@ public class MailItemController {
     @GetMapping
     public List<MailItemDto> getMailItemsByRecipientName(@RequestParam String recipientName) {
         return mailItemService.getMailItemsByRecipientName(recipientName);
+    }
+
+    @GetMapping("/{id}")
+    public MailItemDto getMailItemById(@PathVariable Long id) {
+        return mailItemService.getMailItemById(id);
+    }
+
+    @GetMapping("/{id}/status")
+    public String getMailItemStatus(@PathVariable Long id) {
+        return mailItemService.getMailItemStatus(id);
     }
 }

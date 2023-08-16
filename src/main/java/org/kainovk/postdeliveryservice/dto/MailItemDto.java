@@ -16,7 +16,7 @@ import java.util.List;
 public class MailItemDto {
 
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    private Integer id;
+    private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String type;

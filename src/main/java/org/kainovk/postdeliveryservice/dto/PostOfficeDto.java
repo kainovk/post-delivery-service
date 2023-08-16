@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class PostOfficeDto {
 
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    private Integer id;
+    private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String index;
@@ -30,5 +30,8 @@ public class PostOfficeDto {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
-    private LocalDateTime timestamp;
+    private LocalDateTime arrivalTime;
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private LocalDateTime departureTime;
 }
