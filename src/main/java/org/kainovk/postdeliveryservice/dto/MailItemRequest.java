@@ -1,10 +1,12 @@
 package org.kainovk.postdeliveryservice.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.kainovk.postdeliveryservice.model.Type;
 
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class MailItemRequest {
 
